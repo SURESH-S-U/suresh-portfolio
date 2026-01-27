@@ -90,7 +90,7 @@ function App() {
           className="min-vh-100 d-flex flex-column justify-content-center my-5"
         >
           <h1 className="fw-bold lh-1">
-            <span className="fs-2 d-block mb-2">
+            <span className="fs-4 d-block mb-2">
               SURESH S U
             </span>
 
