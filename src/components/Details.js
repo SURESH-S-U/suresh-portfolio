@@ -1,7 +1,7 @@
 import React from "react";
 import profile from "../assets/profile.png";
 
-const Details = () => {
+const Details = ({ theme }) => {
   return (
     <div>
       <h2 className="fw-bold mb-4">About</h2>
@@ -72,15 +72,27 @@ const Details = () => {
                     "linear-gradient(135deg, rgba(0,255,255,0.10), rgba(255,255,255,0))",
                 }}
               >
-                <h6 className="fw-bold mb-1 text-light">
-                  {edu.title}
-                </h6>
+              <h6
+                className="fw-bold mb-1"
+                style={{
+                  color: theme === "dark" ? "#ffffff" : "#0f2027"
+                }}
+              >
+                {edu.title}
+              </h6>
 
-                <p className="mb-0 text-light opacity-75">
-                  {edu.place}
-                  <br />
-                  <small className="opacity-75">{edu.year}</small>
-                </p>
+              <p
+                className="mb-0"
+                style={{
+                  color: theme === "dark"
+                    ? "rgba(255,255,255,0.75)"
+                    : "rgba(15,32,39,0.75)"
+                }}
+              >
+                {edu.place}
+                <br />
+                <small style={{ opacity: 0.75 }}>{edu.year}</small>
+              </p>
               </div>
             ))}
           </div>

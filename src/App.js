@@ -10,6 +10,23 @@ function App() {
     localStorage.getItem("theme") || "dark"
   );
 
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  /* Track screen size */
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+      if (window.innerWidth >= 768) {
+        setSidebarOpen(false); // reset sidebar on desktop
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  /* Theme handling */
   useEffect(() => {
     document.body.className =
       theme === "dark" ? "bg-dark text-light" : "bg-light text-dark";
@@ -18,31 +35,55 @@ function App() {
 
   return (
     <>
-      {/* FIXED SIDEBAR */}
-      <Sidebar />
+      {/* SIDEBAR */}
+      <Sidebar
+        isOpen={sidebarOpen}
+        toggle={() => setSidebarOpen(false)}
+      />
+
+      {/* MOBILE BURGER */}
+      {isMobile && (
+        <button
+          onClick={() => setSidebarOpen(prev => !prev)}
+          style={{
+            position: "fixed",
+            top: "20px",
+            left: "20px",
+            zIndex: 1300
+          }}
+          className="btn btn-outline-secondary"
+        >
+          ☰
+        </button>
+      )}
+
+      {/* STATIC THEME TOGGLE */}
+      <button
+        onClick={() =>
+          setTheme(theme === "dark" ? "light" : "dark")
+        }
+        style={{
+          position: "fixed",
+          top: "20px",
+          right: "20px",
+          zIndex: 1300
+        }}
+        className="btn btn-outline-secondary btn-sm"
+      >
+        {theme === "dark" ? "☀ Light" : "🌙 Dark"}
+      </button>
 
       {/* MAIN CONTENT */}
       <div
         className="container-fluid"
         style={{
-          marginLeft: "190px",
-          paddingLeft: "24px",
-          paddingRight: "24px",
-          maxWidth: "calc(100vw - 190px)"
+          marginLeft: !isMobile ? "190px" : "0",
+          padding: "100px 24px 24px",
+          maxWidth: !isMobile
+            ? "calc(100vw - 190px)"
+            : "100%"
         }}
       >
-        {/* THEME TOGGLE */}
-        <div className="text-end mt-4">
-          <button
-            className="btn btn-outline-secondary btn-sm"
-            onClick={() =>
-              setTheme(theme === "dark" ? "light" : "dark")
-            }
-          >
-            {theme === "dark" ? "☀ Light" : "🌙 Dark"}
-          </button>
-        </div>
-
         {/* HERO */}
         <section
           id="home"
@@ -69,7 +110,9 @@ function App() {
 
         {/* PROJECTS */}
         <section id="projects" className="my-5 py-5">
-          <h2 className="fw-bold display-6 mb-5">Projects</h2>
+          <h2 className="fw-bold display-6 mb-5">
+            Projects
+          </h2>
 
           <ProjectCard
             title="NLP Based Database Engine"
@@ -108,7 +151,7 @@ function App() {
 
         {/* ABOUT */}
         <section id="details" className="my-5 py-5">
-          <Details />
+          <Details theme={theme} />
         </section>
 
         {/* SKILLS */}
