@@ -1,23 +1,50 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import Sidebar from "./Sidebar";
 import Skills from "./components/Skills";
 import Details from "./components/Details";
 import ProjectCard from "./components/ProjectCard";
+import Contact from "./components/Contact";
 
 function App() {
+
+  // THEME STATE
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") || "dark"
+  );
+
+  // APPLY THEME
+  useEffect(() => {
+    document.body.className = theme;
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  // TOGGLE FUNCTION
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
   return (
-    <div>
+    <div className="app-container">
       <Sidebar />
+
+      {/* THEME TOGGLE */}
+      <button className="theme-toggle" onClick={toggleTheme}>
+        {theme === "dark" ? "☀ Light" : "🌙 Dark"}
+      </button>
 
       {/* HERO */}
       <section id="home" className="section hero">
-        <h1>
-          <span className="highlight">Suresh S U</span><br />
-          Full Stack <br />
-          <span className="cyan-text">+ AI Developer</span>
+        <h1 className="hero-title">
+          <span className="name-text">SURESH S U</span><br />
+          <span className="role-text">
+            Full Stack <br />
+            <span className="cyan-text">+ AI Developer</span>
+          </span>
         </h1>
-        <p className="hero-sub">Building intelligent & scalable solutions</p>
+        <p className="hero-sub">
+          Building intelligent & scalable solutions
+        </p>
       </section>
 
       {/* PROJECTS */}
@@ -40,38 +67,15 @@ function App() {
           link="#"
           reverse
         />
-
-        <ProjectCard
-          title="Inventory Management System"
-          year="2023 – 2024"
-          desc="Inventory tracking system with clean UI and product management."
-          img="/projects/inventory.jpg"
-          link="#"
-        />
-
-        <ProjectCard
-          title="Fruit Disease Detection"
-          year="2023 – 2024"
-          desc="ML-based fruit disease classification using image datasets."
-          img="/projects/fruit.jpg"
-          link="#"
-          reverse
-        />
       </section>
 
-      {/* ABOUT / DETAILS */}
       <Details />
 
-      {/* SKILLS */}
       <section id="skills" className="section">
         <Skills />
       </section>
 
-      {/* CONTACT */}
-      <section id="contact" className="section contact">
-        <h2>Contact</h2>
-        <p>Email: sureshsu@example.com</p>
-      </section>
+      <Contact />
     </div>
   );
 }
