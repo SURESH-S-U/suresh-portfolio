@@ -77,7 +77,7 @@ const Sidebar = ({ isOpen, toggle }) => {
 
         {/* NAVIGATION */}
         <nav className="nav flex-column text-center gap-4">
-          {["Home", "Projects", "Details", "Skills", "Contact"].map((item) => (
+          {["Home", "Projects", "Skills", "Details", "Contact"].map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase()}`}

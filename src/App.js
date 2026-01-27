@@ -149,14 +149,14 @@ function App() {
           />
         </section>
 
-        {/* ABOUT */}
-        <section id="details" className="my-5 py-5">
-          <Details theme={theme} />
-        </section>
-
         {/* SKILLS */}
         <section id="skills" className="my-5 py-5">
           <Skills />
+        </section>
+
+        {/* ABOUT */}
+        <section id="details" className="my-5 py-5">
+          <Details theme={theme} />
         </section>
 
         {/* CONTACT */}
