@@ -16,10 +16,10 @@ function Contact() {
                 <FaEnvelope className="fs-1 text-info mb-3" />
                 <h5 className="fw-semibold">Email</h5>
                 <a
-                  href="mailto:sureshsu@example.com"
+                  href="mailto:suresh.elite07@gmail.com"
                   className="text-decoration-none text-reset"
                 >
-                  sureshsu@example.com
+                  suresh.elite07@gmail.com
                 </a>
               </div>
             </div>
@@ -32,12 +32,12 @@ function Contact() {
                 <FaLinkedin className="fs-1 text-info mb-3" />
                 <h5 className="fw-semibold">LinkedIn</h5>
                 <a
-                  href="https://linkedin.com/in/suresh"
+                  href="https://www.linkedin.com/in/suresh-s-u/"
                   target="_blank"
                   rel="noreferrer"
                   className="text-decoration-none text-reset"
                 >
-                  linkedin.com/in/suresh
+                  linkedin.com/in/suresh-s-u
                 </a>
               </div>
             </div>

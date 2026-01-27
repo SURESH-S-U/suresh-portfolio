@@ -54,12 +54,12 @@ const Details = () => {
               },
               {
                 title: "HSC",
-                place: "Sree Dharsitric Govt Model School",
+                place: "Erode District Govt Model School",
                 year: "2022 – 2023",
               },
               {
                 title: "SSLC",
-                place: "Govt High School, Mokkina Komba",
+                place: "Govt High School, MokkinanKombai",
                 year: "2020 – 2021",
               },
             ].map((edu, i) => (
