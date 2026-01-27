@@ -1,0 +1,40 @@
+.details-section {
+  padding: 120px;
+}
+
+.details-container {
+  display: flex;
+  gap: 80px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.details-text {
+  max-width: 600px;
+}
+
+.details-text h2 {
+  font-size: 42px;
+}
+
+.details-text p {
+  color: #aaa;
+  line-height: 1.8;
+  margin-top: 15px;
+}
+
+.details-text h3 {
+  margin-top: 30px;
+}
+
+.highlight {
+  color: #00e5ff;
+}
+
+.details-image img {
+  width: 280px;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 2px solid #00e5ff;
+}

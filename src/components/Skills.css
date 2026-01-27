@@ -1,0 +1,36 @@
+.skills-section {
+  padding: 120px;
+  text-align: center;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 30px;
+  max-width: 900px;
+  margin: 50px auto 0;
+}
+
+.skill {
+  background: #121212;
+  border: 1px solid #222;
+  padding: 30px;
+  border-radius: 14px;
+  transition: 0.3s;
+}
+
+.skill svg {
+  font-size: 42px;
+  color: #00e5ff;
+}
+
+.skill span {
+  display: block;
+  margin-top: 12px;
+  color: #aaa;
+}
+
+.skill:hover {
+  transform: translateY(-6px);
+  border-color: #00e5ff;
+}

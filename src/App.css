@@ -1,34 +1,33 @@
 body {
   margin: 0;
-  background-color: #0B0B0B; /* Deep dark background */
+  background: #0b0b0b;
   color: white;
-  font-family: 'Inter', sans-serif;
-  overflow-x: hidden;
+  font-family: "Inter", sans-serif;
 }
-
-.cyan-text { color: #00E5FF; }
-.cyan-bg { background-color: #00E5FF; }
-
-/* The vertical text in the sidebar */
-.vertical-text {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-}
-
-.nav-link {
-  text-decoration: none;
-  color: #888;
-  font-size: 14px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  transition: 0.3s;
-}
-
-.nav-link:hover { color: #00E5FF; }
 
 .section {
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding-left: 120px; /* Space for the sidebar */
+  padding: 120px;
+  padding-left: 160px; /* space for sidebar */
+}
+
+
+.hero h1 {
+  font-size: 80px;
+  line-height: 1;
+}
+
+.hero p {
+  letter-spacing: 6px;
+  color: #777;
+  margin-top: 20px;
+}
+
+.section-title {
+  font-size: 48px;
+  margin-bottom: 60px;
+}
+
+.cyan-text {
+  color: #00e5ff;
 }
