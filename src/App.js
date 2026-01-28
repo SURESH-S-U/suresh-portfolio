@@ -4,6 +4,10 @@ import Skills from "./components/Skills";
 import Details from "./components/Details";
 import ProjectCard from "./components/ProjectCard";
 import Contact from "./components/Contact";
+import ShadowImage from "./assets/shadow.png";
+import ShadowWhiteImage from "./assets/shadowWhite.png";
+
+
 
 function App() {
   const [theme, setTheme] = useState(
@@ -28,10 +32,16 @@ function App() {
 
   /* Theme handling */
   useEffect(() => {
-    document.body.className =
-      theme === "dark" ? "bg-dark text-light" : "bg-light text-dark";
-    localStorage.setItem("theme", theme);
-  }, [theme]);
+  if (theme === "dark") {
+    document.body.style.backgroundColor = "#000000";
+    document.body.className = "text-light";
+  } else {
+    document.body.style.backgroundColor = "#ffffff"; // PURE WHITE
+    document.body.className = "text-dark";
+  }
+
+  localStorage.setItem("theme", theme);
+}, [theme]);
 
   return (
     <>
@@ -87,26 +97,61 @@ function App() {
         {/* HERO */}
         <section
           id="home"
-          className="min-vh-100 d-flex flex-column justify-content-center my-5"
+          className="min-vh-100 d-flex align-items-center"
         >
-          <h1 className="fw-bold lh-1">
-            <span className="fs-4 d-block mb-2">
-              SURESH S U
-            </span>
+          <div className="row w-100 align-items-center">
 
-            <span className="display-3 d-block mt-3">
-              Full Stack
-            </span>
+            {/* LEFT CONTENT */}
+            <div className="col-md-6 ps-md-5">
+              <h1 className="fw-bold lh-1">
 
-            <span className="display-4 text-info d-block mt-2">
-              + AI Developer
-            </span>
-          </h1>
+                <span className="fs-4 d-block mb-4 text-uppercase opacity-75">
+                  SURESH S U
+                </span>
 
-          <p className="fs-4 mt-4 opacity-75">
-            Building intelligent & scalable solutions
-          </p>
+                <span className="display-1 d-block">
+                  Full Stack
+                </span>
+
+                <span className="display-3 text-info d-block mt-3">
+                  + AI Developer
+                </span>
+
+              </h1>
+
+              <p className="fs-4 mt-4 opacity-75">
+                Building intelligent & scalable solutions
+              </p>
+            </div>
+
+            {/* RIGHT IMAGE */}
+            <div className="col-md-6 d-flex justify-content-center justify-content-md-end pe-md-5">
+<img
+  src={theme === "dark" ? ShadowImage : ShadowWhiteImage}
+  alt="Profile"
+  style={{
+    maxWidth: "420px",
+    width: "100%",
+    height: "auto",
+    objectFit: "contain",
+
+    /* 🔥 EDGE BLENDING FIX */
+    maskImage:
+      theme === "light"
+        ? "radial-gradient(circle, black 65%, transparent 100%)"
+        : "none",
+    WebkitMaskImage:
+      theme === "light"
+        ? "radial-gradient(circle, black 65%, transparent 100%)"
+        : "none"
+  }}
+/>
+
+            </div>
+
+          </div>
         </section>
+
 
         {/* PROJECTS */}
         <section id="projects" className="my-5 py-5">
