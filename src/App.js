@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Sidebar from "./Sidebar";
+import Sidebar from "./components/Sidebar";
 import Skills from "./components/Skills";
 import Details from "./components/Details";
 import ProjectCard from "./components/ProjectCard";
@@ -126,26 +126,26 @@ function App() {
 
             {/* RIGHT IMAGE */}
             <div className="col-md-6 d-flex justify-content-center justify-content-md-end pe-md-5">
-<img
-  src={theme === "dark" ? ShadowImage : ShadowWhiteImage}
-  alt="Profile"
-  style={{
-    maxWidth: "420px",
-    width: "100%",
-    height: "auto",
-    objectFit: "contain",
+              <img
+                src={theme === "dark" ? ShadowImage : ShadowWhiteImage}
+                alt="Profile"
+                style={{
+                  maxWidth: "420px",
+                  width: "100%",
+                  height: "auto",
+                  objectFit: "contain",
 
-    /* 🔥 EDGE BLENDING FIX */
-    maskImage:
-      theme === "light"
-        ? "radial-gradient(circle, black 65%, transparent 100%)"
-        : "none",
-    WebkitMaskImage:
-      theme === "light"
-        ? "radial-gradient(circle, black 65%, transparent 100%)"
-        : "none"
-  }}
-/>
+                  /* 🔥 EDGE BLENDING FIX */
+                  maskImage:
+                    theme === "light"
+                      ? "radial-gradient(circle, black 65%, transparent 100%)"
+                      : "none",
+                  WebkitMaskImage:
+                    theme === "light"
+                      ? "radial-gradient(circle, black 65%, transparent 100%)"
+                      : "none"
+                }}
+              />
 
             </div>
 
