@@ -28,7 +28,7 @@ const Details = ({ theme }) => {
                   WebkitTextFillColor: "transparent",
                 }}
               >
-                Suresh S U
+                SURESH S U
               </span>
             </h2>
 
@@ -38,10 +38,16 @@ const Details = ({ theme }) => {
               <span className="text-info">
                 Bannari Amman Institute of Technology
               </span>
-              . I build full-stack applications and AI-powered systems using{" "}
-              <strong>Python, React, FastAPI</strong>, and modern web
-              technologies.
+              . I build scalable full-stack applications and intelligent, AI-powered
+              systems using <strong>MERN</strong> and modern web technologies.
+              <br /><br />
+              Passionate about solving real-world problems, I enjoy transforming complex
+              ideas into clean, efficient solutions. With hands-on experience in{" "}
+              <strong>machine learning, backend architecture, and UI/UX design</strong>,
+              I constantly push myself to learn, innovate, and create technology that
+              makes an impact.
             </p>
+
 
             <h4 className="fw-bold mt-5 mb-3">Education</h4>
 
@@ -99,28 +105,17 @@ const Details = ({ theme }) => {
 
           {/* IMAGE */}
           <div className="col-md-5 text-center">
-            <div
-              className="p-3 rounded-4"
+            <img
+              src={profile}
+              alt="Suresh S U"
+              className="img-fluid rounded-3"
               style={{
-                background:
-                  "linear-gradient(135deg, rgba(0,255,255,0.15), rgba(255,255,255,0))",
-                boxShadow: "0 15px 40px rgba(0,255,255,0.25)",
-                transition: "transform 0.4s ease",
+                maxWidth: "280px",
+                marginTop: "-400px",   // ⬆️ moves image up
               }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.transform = "translateY(-8px)")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.transform = "translateY(0)")
-              }
-            >
-              <img
-                src={profile}
-                alt="Suresh S U"
-                className="img-fluid rounded-3"
-              />
-            </div>
-          </div>
+            />
+          </div> 
+
 
         </div>
       </div>
