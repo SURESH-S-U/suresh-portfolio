@@ -4,6 +4,17 @@ import ShadowWhiteImage from "../assets/shadowWhite.png";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 
+
+const iconStyle = (c1, c2) => ({
+  color: "#fff",
+  padding: "14px",
+  borderRadius: "50%",
+  background: `linear-gradient(135deg, ${c1}, ${c2})`,
+  boxShadow: "0 0 22px rgba(0,255,255,0.6)",
+  transition: "all 0.3s ease",
+});
+
+
 const Home = ({ theme }) => {
   return (
     <section
@@ -11,11 +22,13 @@ const Home = ({ theme }) => {
       className="min-vh-100 d-flex flex-column justify-content-between" style={{marginTop:"-30px"}}
     >
       {/* MAIN CONTENT */}
-      <div className="row w-100 align-items-center flex-grow-1">
+      <div className="row w-100 align-items-center flex-grow-1" style={{marginTop:"100px"}}>
 
         {/* LEFT CONTENT */}
-        <div className="col-md-6 ps-md-5">
-          <h1 className="fw-bold lh-1">
+        <div
+        className="col-md-6 ps-md-5"
+        style={{ marginTop: "180px" }}
+        >          <h1 className="fw-bold lh-1">
             <span className="fs-4 d-block mb-4 text-uppercase opacity-75">
               SURESH S U
             </span>
@@ -35,7 +48,7 @@ const Home = ({ theme }) => {
         </div>
 
         {/* RIGHT IMAGE */}
-        <div className="col-md-6 d-flex justify-content-center justify-content-md-end pe-md-5" style={{marginTop:"130px"}}>
+        <div className="col-md-6 d-flex justify-content-center justify-content-md-end pe-md-5" style={{marginTop:"-10px"}}>
           <img
             src={theme === "dark" ? ShadowImage : ShadowWhiteImage}
             alt="Profile"
@@ -57,100 +70,92 @@ const Home = ({ theme }) => {
         </div>
       </div>
 
-      {/* BOTTOM CTA */}
-      <div className="ms-5 mb-4" style={{marginTop:"-150px"}}>
-        {/* TEXT */}
-        <p
-          className="fw-semibold mb-3"
-          style={{
-            fontSize: "1.1rem",
-            letterSpacing: "0.12em",
-            textTransform: "uppercase",
-            background: "linear-gradient(90deg, #00ffff, #4facfe)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-          }}
-        >
-          Check My Profile
-        </p>
+    {/* FULL WIDTH CTA SECTION */}
+<div
+  className="profile-cta"
+  style={{
+    width: "100%",
+    padding: "70px 20px",
+    marginTop: "40px",
+    background:
+      "linear-gradient(120deg, rgba(0,255,255,0.12), rgba(79,172,254,0.15), rgba(0,255,255,0.12))",
+    backdropFilter: "blur(6px)",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    textAlign: "center",
+    animation: "ctaReveal 1.2s ease forwards",
+  }}
+>
+  {/* CTA TEXT */}
+  <h2
+    style={{
+      fontSize: "2.2rem",
+      fontWeight: "700",
+      letterSpacing: "0.25em",
+      textTransform: "uppercase",
+      background:
+        "linear-gradient(90deg, #00ffff, #4facfe, #00ffff)",
+      WebkitBackgroundClip: "text",
+      WebkitTextFillColor: "transparent",
+      backgroundSize: "200% auto",
+      animation: "gradientMove 4s linear infinite",
+      marginBottom: "25px",
+    }}
+  >
+    Check My Profile
+  </h2>
 
-        {/* ICONS */}
-        <div className="d-flex gap-4 mt-3">
+  {/* CTA GLOW BAR */}
+  <div
+    style={{
+      width: "320px",
+      height: "6px",
+      borderRadius: "50px",
+      background:
+        "linear-gradient(90deg, #00ffff, #4facfe, #00ffff)",
+      backgroundSize: "200% 200%",
+      boxShadow: "0 0 35px rgba(0,255,255,0.8)",
+      animation: "gradientMove 3s linear infinite",
+      marginBottom: "40px",
+    }}
+  />
 
-          {/* GitHub */}
-          <a
-            href="https://github.com/SURESH-S-U"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="fs-3"
-            style={{
-              color: "#fff",
-              padding: "12px",
-              borderRadius: "50%",
-              background: "linear-gradient(135deg, #00ffff, #4facfe)",
-              boxShadow: "0 0 18px rgba(0,255,255,0.7)",
-              transition: "all 0.3s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-6px) scale(1.15)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0) scale(1)";
-            }}
-          >
-            <FaGithub />
-          </a>
+  {/* SOCIAL ICONS */}
+  <div className="d-flex gap-4 justify-content-center">
+    <a
+      href="https://github.com/SURESH-S-U"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="fs-3"
+      style={iconStyle("#00ffff", "#4facfe")}
+    >
+      <FaGithub />
+    </a>
 
-          {/* LinkedIn */}
-          <a
-            href="https://www.linkedin.com/in/suresh-s-u/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="fs-3"
-            style={{
-              color: "#fff",
-              padding: "12px",
-              borderRadius: "50%",
-              background: "linear-gradient(135deg, #0077b5, #00c6ff)",
-              boxShadow: "0 0 18px rgba(0,198,255,0.7)",
-              transition: "all 0.3s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-6px) scale(1.15)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0) scale(1)";
-            }}
-          >
-            <FaLinkedin />
-          </a>
+    <a
+      href="https://www.linkedin.com/in/suresh-s-u/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="fs-3"
+      style={iconStyle("#0077b5", "#00c6ff")}
+    >
+      <FaLinkedin />
+    </a>
 
-          {/* LeetCode */}
-          <a
-            href="https://leetcode.com/u/SURESH_S_U/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="fs-3"
-            style={{
-              color: "#fff",
-              padding: "12px",
-              borderRadius: "50%",
-              background: "linear-gradient(135deg, #f89b29, #ffb347)",
-              boxShadow: "0 0 18px rgba(255,179,71,0.7)",
-              transition: "all 0.3s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-6px) scale(1.15)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0) scale(1)";
-            }}
-          >
-            <SiLeetcode />
-          </a>
+    <a
+      href="https://leetcode.com/u/SURESH_S_U/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="fs-3"
+      style={iconStyle("#f89b29", "#ffb347")}
+    >
+      <SiLeetcode />
+    </a>
+  </div>
+</div>
 
-        </div>
-      </div>
+
     </section>
   );
 };

@@ -7,8 +7,6 @@ import ProjectCard from "./components/ProjectCard";
 import Contact from "./components/Contact";
 import Home from "./components/Home";
 
-
-
 function App() {
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") || "dark"
@@ -17,7 +15,7 @@ function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
-  /* Track screen size */
+  /* ================= SCREEN SIZE ================= */
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
@@ -30,16 +28,22 @@ function App() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  /* Theme handling */
+  /* ================= THEME HANDLING ================= */
   useEffect(() => {
-    document.body.style.backgroundColor = "#000000";
-    document.body.className = "text-light";
+    if (theme === "dark") {
+      // 🔑 MATCH IMAGE BACKGROUND
+      document.body.style.backgroundColor = "#010100"; // near-pure black
+      document.body.className = "text-light";
+    } else {
+      document.body.style.backgroundColor = "#ffffff";
+      document.body.className = "text-dark";
+    }
+
     localStorage.setItem("theme", theme);
   }, [theme]);
 
   return (
     <>
-
       {/* ================= SIDEBAR ================= */}
       <Sidebar
         isOpen={sidebarOpen}
@@ -49,12 +53,12 @@ function App() {
       {/* ================= MOBILE BURGER ================= */}
       {isMobile && (
         <button
-          onClick={() => setSidebarOpen(prev => !prev)}
+          onClick={() => setSidebarOpen((prev) => !prev)}
           style={{
             position: "fixed",
             top: "20px",
             left: "20px",
-            zIndex: 1200
+            zIndex: 1200,
           }}
           className="btn btn-outline-secondary"
         >
@@ -71,7 +75,7 @@ function App() {
           position: "fixed",
           top: "20px",
           right: "20px",
-          zIndex: 1200
+          zIndex: 1200,
         }}
         className="btn btn-outline-secondary btn-sm"
       >
@@ -82,14 +86,14 @@ function App() {
       <div
         className="container-fluid"
         style={{
+          marginTop:"-70px",
           position: "relative",
-          zIndex: 1,               // 🔑 ABOVE PARTICLES
+          zIndex: 1,
           marginLeft: !isMobile ? "190px" : "0",
-          marginTop: "-100px",
-          padding: "100px 24px 24px",
+          padding: "120px 32px 32px",
           maxWidth: !isMobile
             ? "calc(100vw - 190px)"
-            : "100%"
+            : "100%",
         }}
       >
         {/* HOME */}
