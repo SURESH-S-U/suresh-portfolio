@@ -58,7 +58,7 @@ const Home = ({ theme }) => {
       </div>
 
       {/* BOTTOM CTA */}
-      <div className="ms-5 mb-4" style={{ marginTop: "-100px" }}>
+      <div className="ms-5 mb-4" style={{ marginTop: "-200px" }}>
         {/* TEXT */}
         <p
           className="fw-semibold mb-3"

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Particles from "react-tsparticles";
 
 import Sidebar from "./components/Sidebar";
 import Skills from "./components/Skills";
@@ -8,7 +7,6 @@ import ProjectCard from "./components/ProjectCard";
 import Contact from "./components/Contact";
 import Home from "./components/Home";
 
-import ParticlesBackground from "./ParticlesBackground";
 
 
 function App() {
@@ -41,8 +39,6 @@ function App() {
 
   return (
     <>
-      {/* ================= PARTICLE BACKGROUND ================= */}
-      <ParticlesBackground />
 
       {/* ================= SIDEBAR ================= */}
       <Sidebar
