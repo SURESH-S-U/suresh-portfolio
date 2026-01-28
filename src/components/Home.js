@@ -8,7 +8,7 @@ const Home = ({ theme }) => {
   return (
     <section
       id="home"
-      className="min-vh-100 d-flex flex-column justify-content-between"
+      className="min-vh-100 d-flex flex-column justify-content-between" style={{marginTop:"-30px"}}
     >
       {/* MAIN CONTENT */}
       <div className="row w-100 align-items-center flex-grow-1">
@@ -35,7 +35,7 @@ const Home = ({ theme }) => {
         </div>
 
         {/* RIGHT IMAGE */}
-        <div className="col-md-6 d-flex justify-content-center justify-content-md-end pe-md-5">
+        <div className="col-md-6 d-flex justify-content-center justify-content-md-end pe-md-5" style={{marginTop:"130px"}}>
           <img
             src={theme === "dark" ? ShadowImage : ShadowWhiteImage}
             alt="Profile"
@@ -58,7 +58,7 @@ const Home = ({ theme }) => {
       </div>
 
       {/* BOTTOM CTA */}
-      <div className="ms-5 mb-4" style={{ marginTop: "-200px" }}>
+      <div className="ms-5 mb-4" style={{marginTop:"-150px"}}>
         {/* TEXT */}
         <p
           className="fw-semibold mb-3"
