@@ -7,6 +7,9 @@ import ProjectCard from "./components/ProjectCard";
 import Contact from "./components/Contact";
 import Home from "./components/Home";
 
+// Particle js
+import Particles from './components/Particles';
+
 function App() {
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") || "dark"
@@ -44,6 +47,20 @@ function App() {
 
   return (
     <>
+      {/* PARTICLES BACKGROUND */}
+      <Particles
+        particleColors={["#ffffff"]}
+        particleCount={180}
+        particleSpread={10}
+        speed={0.08}
+        particleBaseSize={80}
+        alphaParticles={false}
+        disableRotation={false}
+        pixelRatio={window.devicePixelRatio}
+      />
+
+
+
       {/* ================= SIDEBAR ================= */}
       <Sidebar
         isOpen={sidebarOpen}
