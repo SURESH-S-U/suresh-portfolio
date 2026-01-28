@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from "react";
+import Particles from "react-tsparticles";
+
 import Sidebar from "./components/Sidebar";
 import Skills from "./components/Skills";
 import Details from "./components/Details";
 import ProjectCard from "./components/ProjectCard";
 import Contact from "./components/Contact";
 import Home from "./components/Home";
+
+import ParticlesBackground from "./ParticlesBackground";
+
 
 function App() {
   const [theme, setTheme] = useState(
@@ -29,25 +34,23 @@ function App() {
 
   /* Theme handling */
   useEffect(() => {
-    if (theme === "dark") {
-      document.body.style.backgroundColor = "#000000";
-      document.body.className = "text-light";
-    } else {
-      document.body.style.backgroundColor = "#ffffff";
-      document.body.className = "text-dark";
-    }
+    document.body.style.backgroundColor = "#000000";
+    document.body.className = "text-light";
     localStorage.setItem("theme", theme);
   }, [theme]);
 
   return (
     <>
-      {/* SIDEBAR */}
+      {/* ================= PARTICLE BACKGROUND ================= */}
+      <ParticlesBackground />
+
+      {/* ================= SIDEBAR ================= */}
       <Sidebar
         isOpen={sidebarOpen}
         toggle={() => setSidebarOpen(false)}
       />
 
-      {/* MOBILE BURGER */}
+      {/* ================= MOBILE BURGER ================= */}
       {isMobile && (
         <button
           onClick={() => setSidebarOpen(prev => !prev)}
@@ -55,7 +58,7 @@ function App() {
             position: "fixed",
             top: "20px",
             left: "20px",
-            zIndex: 1300
+            zIndex: 1200
           }}
           className="btn btn-outline-secondary"
         >
@@ -63,7 +66,7 @@ function App() {
         </button>
       )}
 
-      {/* THEME TOGGLE */}
+      {/* ================= THEME TOGGLE ================= */}
       <button
         onClick={() =>
           setTheme(theme === "dark" ? "light" : "dark")
@@ -72,18 +75,21 @@ function App() {
           position: "fixed",
           top: "20px",
           right: "20px",
-          zIndex: 1300
+          zIndex: 1200
         }}
         className="btn btn-outline-secondary btn-sm"
       >
         {theme === "dark" ? "☀ Light" : "🌙 Dark"}
       </button>
 
-      {/* MAIN CONTENT */}
+      {/* ================= MAIN CONTENT ================= */}
       <div
         className="container-fluid"
         style={{
+          position: "relative",
+          zIndex: 1,               // 🔑 ABOVE PARTICLES
           marginLeft: !isMobile ? "190px" : "0",
+          marginTop: "-100px",
           padding: "100px 24px 24px",
           maxWidth: !isMobile
             ? "calc(100vw - 190px)"
