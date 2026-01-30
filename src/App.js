@@ -7,8 +7,11 @@ import ProjectCard from "./components/ProjectCard";
 import Contact from "./components/Contact";
 import Home from "./components/Home";
 
-// Particle js
-import Particles from './components/Particles';
+// Import Particle js
+import FireworkComponent from "./components/FireworkComponent";
+
+
+
 
 function App() {
   const [theme, setTheme] = useState(
@@ -48,16 +51,7 @@ function App() {
   return (
     <>
       {/* PARTICLES BACKGROUND */}
-      <Particles
-        particleColors={["#ffffff"]}
-        particleCount={180}
-        particleSpread={10}
-        speed={0.08}
-        particleBaseSize={80}
-        alphaParticles={false}
-        disableRotation={false}
-        pixelRatio={window.devicePixelRatio}
-      />
+       <FireworkComponent/>
 
 
 
