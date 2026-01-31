@@ -1,6 +1,6 @@
 import React from "react";
 import ShadowImage from "../assets/shadow.png";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaChevronDown } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 
 const iconStyle = (c1, c2) => ({
@@ -20,7 +20,7 @@ const Home = () => {
   return (
     <section id="home" className="min-vh-100 d-flex flex-column justify-content-between position-relative overflow-hidden" style={{ marginTop: "-30px", background: "#050505" }}>
       
-      {/* --- CYBERNETIC WAVE SYSTEM --- */}
+      {/* --- CYBERNETIC WAVE SYSTEM (UNCHANGED) --- */}
       <style>
         {`
           @keyframes waveSlide {
@@ -31,9 +31,14 @@ const Home = () => {
             0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
             50% { transform: translateY(-20px) scale(1.1); opacity: 0.5; }
           }
+          @keyframes arrowBounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-15px); }
+            60% { transform: translateY(-7px); }
+          }
           .high-effect-container {
             position: absolute;
-            top: -40px; /* MOVED ONE STEP UPWARD */
+            top: -40px;
             left: 0;
             width: 100%;
             height: 100%;
@@ -69,14 +74,11 @@ const Home = () => {
         <div className="wave-wrapper">
           <svg viewBox="0 0 1440 400" preserveAspectRatio="none" style={{ width: '50%', height: '550px' }}>
             <defs>
-              {/* BALANCED BRIGHTNESS GRADIENT */}
               <linearGradient id="softWaveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="rgba(0, 255, 255, 0)" />
                 <stop offset="50%" stopColor="rgba(0, 255, 255, 0.5)" />
                 <stop offset="100%" stopColor="rgba(0, 255, 255, 0)" />
               </linearGradient>
-
-              {/* SUBTLE GLOW FILTER */}
               <filter id="subtleGlow" x="-20%" y="-20%" width="140%" height="140%">
                 <feGaussianBlur stdDeviation="4" result="blur" />
                 <feMerge>
@@ -85,45 +87,19 @@ const Home = () => {
                 </feMerge>
               </filter>
             </defs>
-            
-            {/* AMBIENT PATH */}
-            <path 
-              d="M0 200 C 360 100 720 300 1080 200 C 1440 100 1800 300 2160 200" 
-              fill="none" stroke="rgba(0, 255, 255, 0.08)" strokeWidth="60" 
-            />
-            
-            {/* MAIN GLOWING LINE */}
-            <path 
-              d="M0 200 C 360 100 720 300 1080 200 C 1440 100 1800 300 2160 200" 
-              fill="none" stroke="url(#softWaveGrad)" strokeWidth="2.5" filter="url(#subtleGlow)"
-            />
-
-            {/* THIN DATA LINE */}
-            <path 
-              d="M0 210 C 400 350 800 50 1200 210" 
-              fill="none" stroke="rgba(255, 255, 255, 0.15)" strokeWidth="1" 
-            />
+            <path d="M0 200 C 360 100 720 300 1080 200 C 1440 100 1800 300 2160 200" fill="none" stroke="rgba(0, 255, 255, 0.08)" strokeWidth="60" />
+            <path d="M0 200 C 360 100 720 300 1080 200 C 1440 100 1800 300 2160 200" fill="none" stroke="url(#softWaveGrad)" strokeWidth="2.5" filter="url(#subtleGlow)" />
+            <path d="M0 210 C 400 350 800 50 1200 210" fill="none" stroke="rgba(255, 255, 255, 0.15)" strokeWidth="1" />
           </svg>
-          
-          {/* Duplicate for seamless loop */}
           <svg viewBox="0 0 1440 400" preserveAspectRatio="none" style={{ width: '50%', height: '550px' }}>
-            <path 
-              d="M0 200 C 360 100 720 300 1080 200 C 1440 100 1800 300 2160 200" 
-              fill="none" stroke="rgba(0, 255, 255, 0.08)" strokeWidth="60" 
-            />
-            <path 
-              d="M0 200 C 360 100 720 300 1080 200 C 1440 100 1800 300 2160 200" 
-              fill="none" stroke="url(#softWaveGrad)" strokeWidth="2.5" filter="url(#subtleGlow)"
-            />
-            <path 
-              d="M0 210 C 400 350 800 50 1200 210" 
-              fill="none" stroke="rgba(255, 255, 255, 0.15)" strokeWidth="1" 
-            />
+            <path d="M0 200 C 360 100 720 300 1080 200 C 1440 100 1800 300 2160 200" fill="none" stroke="rgba(0, 255, 255, 0.08)" strokeWidth="60" />
+            <path d="M0 200 C 360 100 720 300 1080 200 C 1440 100 1800 300 2160 200" fill="none" stroke="url(#softWaveGrad)" strokeWidth="2.5" filter="url(#subtleGlow)" />
+            <path d="M0 210 C 400 350 800 50 1200 210" fill="none" stroke="rgba(255, 255, 255, 0.15)" strokeWidth="1" />
           </svg>
         </div>
       </div>
 
-      {/* --- CONTENT (UNCHANGED) --- */}
+      {/* --- CONTENT --- */}
       <div className="row w-100 align-items-center flex-grow-1 position-relative" style={{ marginTop: "100px", zIndex: 1 }}>
         <div className="col-md-6 ps-md-5" style={{ marginTop: "180px" }}>
           <h1 className="fw-bold lh-1">
@@ -137,8 +113,31 @@ const Home = () => {
         <div className="col-md-6 d-flex justify-content-center justify-content-md-end pe-md-5">
           <img src={ShadowImage} alt="Profile" style={{ maxWidth: "420px", width: "100%", height: "auto", objectFit: "contain" }} />
         </div>
+
+        {/* --- MULTICOLOR GLOWING CENTERED ARROW --- */}
+        <div style={{
+          position: "absolute",
+          bottom: "20px",
+          left: "50%",
+          transform: "translateX(-50%)",
+          zIndex: 10,
+          display: "flex",
+          justifyContent: "center"
+        }}>
+          <div style={{ 
+            fontSize: "4rem", 
+            color: "#00ffff", // Primary Cyan Color
+            animation: "arrowBounce 2s infinite ease-in-out",
+            // Multicolor Glow: Cyan + Blue
+            filter: "drop-shadow(0 0 10px #00ffff) drop-shadow(0 0 20px #007bff)",
+            cursor: "pointer"
+          }}>
+            <FaChevronDown />
+          </div>
+        </div>
       </div>
 
+      {/* --- PROFILE CTA --- */}
       <div className="profile-cta" style={{
           width: "100%", padding: "70px 20px", marginTop: "40px",
           background: "linear-gradient(120deg, rgba(0,255,255,0.05), rgba(0,123,255,0.1), rgba(0,255,255,0.05))",
