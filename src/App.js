@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Sidebar from "./components/Sidebar";
 import Skills from "./components/Skills";
 import Details from "./components/Details";
-import ProjectCard from "./components/ProjectCard";
+import ProjectCard from "./components/Projects";
 import Contact from "./components/Contact";
 import Home from "./components/Home";
 import FireworkComponent from "./components/FireworkComponent";
@@ -67,17 +67,7 @@ function App() {
 
         {/* PROJECTS SECTION */}
         <section id="projects" className="my-5 py-5">
-          <h2 className="fw-bold display-6 mb-5" style={{ color: "white" }}>
-            Projects
-          </h2>
-          <ProjectCard
-            title="NLP Based Database Engine"
-            year="2024 – 2025"
-            desc="NLP system converting natural language into structured database queries."
-            img="/projects/nlp.jpg"
-            link="#"
-          />
-          {/* Add other ProjectCards here */}
+          <ProjectCard/>
         </section>
 
         <section id="skills" className="my-5 py-5">

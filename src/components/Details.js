@@ -84,7 +84,6 @@ const Details = ({ theme }) => {
       <div className="container py-4">
         {/* HEADER SECTION */}
         <div className="text-center mb-5 pb-5">
-          <h6 className="text-info text-uppercase fw-bold ls-widest mb-3" style={{ letterSpacing: '5px' }}>Discovery</h6>
           <h2 className="display-4 fw-bold mb-0">About <span className="text-info">Me</span></h2>
           <div className="mt-2 mx-auto" style={{ width: '80px', height: '4px', background: '#00ffff', borderRadius: '10px' }}></div>
         </div>
