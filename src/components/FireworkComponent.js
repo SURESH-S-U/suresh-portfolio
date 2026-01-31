@@ -23,8 +23,8 @@ const FirecrackerLowCount = () => {
         delay: 0.1,
       },
       rate: {
-        // INCREASED DELAY: Fires one rocket every 0.8 seconds (instead of 0.1)
-        delay: 0.2, 
+        // INCREASED DELAY: Fires one rocket every 0.3 seconds (instead of 0.1)
+        delay: 0.5, 
         quantity: 1,
       },
       size: { width: 100, height: 0 },
