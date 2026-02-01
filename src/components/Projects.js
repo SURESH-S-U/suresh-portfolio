@@ -9,7 +9,7 @@ const Projects = () => {
       img: "/projects/nlp.jpg",
       role: "NLP Developer",
       desc: "An intelligent interface that translates natural language into precise SQL queries, allowing non-technical users to interact with complex databases seamlessly.",
-      github: "https://github.com/SURESH-S-U",
+      github: "https://github.com/SURESH-S-U/FastDB",
       live: "#",
     },
     {
@@ -18,7 +18,7 @@ const Projects = () => {
       img: "/projects/face.jpg",
       role: "Full Stack Developer",
       desc: "Real-time biometric security solution. Features high-speed face matching and a robust FastAPI backend for low-latency authentication.",
-      github: "https://github.com/SURESH-S-U",
+      github: "https://github.com/SURESH-S-U/Face-Detection-And-Recognization-FullStack",
       live: "#",
     },
     {
@@ -27,11 +27,11 @@ const Projects = () => {
       img: "/projects/inventory.jpg",
       role: "Frontend Developer",
       desc: "A sophisticated dashboard designed for stock visualization. Built with high-performance React components and real-time state management.",
-      github: "https://github.com/SURESH-S-U",
+      github: "https://github.com/SURESH-S-U/Electronic-Inventory-Management-System",
       live: "#",
     },
     {
-      title: "Agro-Disease Detector",
+      title: "Fruite-Disease Detector",
       year: "2023 - 2024",
       img: "/projects/fruit.jpg",
       role: "ML Engineer",
