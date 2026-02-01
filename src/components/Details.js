@@ -98,7 +98,7 @@ const Details = ({ theme }) => {
               </h2>
               <p className="fs-5 opacity-75 lh-lg">
                 I am an <strong>Artificial Intelligence and Data Science</strong> student at <span className="text-info">Bannari Amman Institute of Technology</span>. 
-                I specialize in building intelligent ecosystems—merging robust <strong>MERN</strong> backend architectures with sophisticated <strong>AI/ML</strong> models.
+                I specialize in building intelligent ecosystems merging robust <strong>MERN</strong> backend architectures with sophisticated <strong>AI/ML</strong> models.
               </p>
               
               <div className="row mt-5">

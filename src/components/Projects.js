@@ -3,7 +3,17 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const Projects = () => {
   const projectData = [
+
     {
+      title: "Inventory Smart-Track",
+      year: "2025 - 2026",
+      img: "/projects/inventory.jpg",
+      role: "Full Stack Developer",
+      desc: "A sophisticated dashboard designed for stock visualization. Built with high-performance React components and real-time state management.",
+      github: "https://github.com/SURESH-S-U/Electronic-Inventory-Management-System",
+      live: "https://electronic-inventory-management-sys.vercel.app/",
+    },
+        {
       title: "NLP Based Database Engine",
       year: "2024 - 2025",
       img: "/projects/nlp.jpg",
@@ -22,15 +32,6 @@ const Projects = () => {
       live: "#",
     },
     {
-      title: "Inventory Smart-Track",
-      year: "2023 - 2024",
-      img: "/projects/inventory.jpg",
-      role: "Frontend Developer",
-      desc: "A sophisticated dashboard designed for stock visualization. Built with high-performance React components and real-time state management.",
-      github: "https://github.com/SURESH-S-U/Electronic-Inventory-Management-System",
-      live: "#",
-    },
-    {
       title: "Fruite-Disease Detector",
       year: "2023 - 2024",
       img: "/projects/fruit.jpg",
@@ -40,6 +41,14 @@ const Projects = () => {
       live: "#",
     },
   ];
+
+  // Function to handle Live Demo click
+  const handleLiveClick = (e, link) => {
+    if (link === "#") {
+      e.preventDefault();
+      alert("The project is not deployed yet.");
+    }
+  };
 
   return (
     <section id="projects" className="py-5 position-relative" style={{ background: "#050505", color: "#fff", overflow: "hidden" }}>
@@ -72,7 +81,7 @@ const Projects = () => {
             transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
             position: relative;
             z-index: 1;
-            margin-bottom: 120px; /* CREATED LARGE BREATHING SPACE */
+            margin-bottom: 120px; 
           }
 
           .glass-project-card:hover {
@@ -93,7 +102,6 @@ const Projects = () => {
             border: 1px solid rgba(255,255,255,0.1);
           }
 
-          /* BUTTONS */
           .btn-project {
             padding: 10px 24px;
             border-radius: 12px;
@@ -141,7 +149,6 @@ const Projects = () => {
       </style>
 
       <div className="container position-relative">
-        {/* SECTION TITLE */}
         <div className="text-center mb-5 pb-5">
           <h2 className="display-4 fw-bold mb-3">Project <span className="text-info">Showcase</span></h2>
           <p className="opacity-50">Realworld Probles with commercial solutions</p>
@@ -152,7 +159,6 @@ const Projects = () => {
           const isReverse = index % 2 !== 0;
           return (
             <div key={index} className="position-relative">
-              {/* RANDOM BACKGROUND ORBS FOR CREATIVITY */}
               <div className="bg-glow-orb" style={{ 
                 top: "10%", 
                 [isReverse ? "left" : "right"]: "-100px" 
@@ -161,7 +167,6 @@ const Projects = () => {
               <div className={`row align-items-center glass-project-card ${isReverse ? "flex-row-reverse" : ""}`}>
                 <div className="project-count">0{index + 1}</div>
 
-                {/* IMAGE SIDE */}
                 <div className="col-lg-5">
                   <div className="project-img-wrapper">
                     <img
@@ -173,7 +178,6 @@ const Projects = () => {
                   </div>
                 </div>
 
-                {/* CONTENT SIDE */}
                 <div className={`col-lg-7 ${isReverse ? "pe-lg-5" : "ps-lg-5"}`}>
                   <div className="d-flex align-items-center gap-3 mb-3">
                     <span className="badge rounded-pill" style={{ background: "rgba(0, 255, 255, 0.1)", color: "#00ffff", border: "1px solid rgba(0,255,255,0.2)" }}>
@@ -193,7 +197,14 @@ const Projects = () => {
                     <a href={project.github} target="_blank" rel="noreferrer" className="btn-project btn-github">
                       <FaGithub size={20} /> Code
                     </a>
-                    <a href={project.live} target="_blank" rel="noreferrer" className="btn-project btn-live">
+                    {/* Updated Live Demo Button */}
+                    <a 
+                      href={project.live} 
+                      target={project.live === "#" ? "_self" : "_blank"} 
+                      rel="noreferrer" 
+                      className="btn-project btn-live"
+                      onClick={(e) => handleLiveClick(e, project.live)}
+                    >
                       <FaExternalLinkAlt size={16} /> Live Demo
                     </a>
                   </div>
