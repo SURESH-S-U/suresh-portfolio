@@ -151,7 +151,7 @@ const Projects = () => {
       <div className="container position-relative">
         <div className="text-center mb-5 pb-5">
           <h2 className="display-4 fw-bold mb-3">Project <span className="text-info">Showcase</span></h2>
-          <p className="opacity-50">Realworld Probles with commercial solutions</p>
+          <p className="opacity-50">Realworld Problems with commercial solutions</p>
           <div className="mx-auto" style={{ width: "80px", height: "4px", background: "linear-gradient(90deg, #00ffff, #007bff)", borderRadius: "10px" }}></div>
         </div>
 
