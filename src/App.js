@@ -5,7 +5,6 @@ import Details from "./components/Details";
 import ProjectCard from "./components/Projects";
 import Contact from "./components/Contact";
 import Home from "./components/Home";
-import FireworkComponent from "./components/FireworkComponent";
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -27,8 +26,6 @@ function App() {
 
   return (
     <>
-      <FireworkComponent />
-
       {/* SIDEBAR (Now Violet) */}
       <Sidebar isOpen={sidebarOpen} toggle={() => setSidebarOpen(false)} />
 

@@ -5,6 +5,15 @@ const Projects = () => {
   const projectData = [
 
     {
+      title: "AI-Powered Intelligent Assesment System",
+      year: "2025-2026",
+      img: "/projects/image1.jpg",
+      role: "Full Stack Developer",
+      desc: "It is an AI-Powered self assesment system where users can assessed based on their domain of interest with multiple difficulty levels and Different assessment types. ",
+      github: "https://github.com/SURESH-S-U/AI-Powered-Intelligent-Immersive-Assesment-System",
+      live: "https://ai-powered-intelligent-immersive-as.vercel.app/",
+    },
+    {
       title: "Inventory Smart-Track",
       year: "2025 - 2026",
       img: "/projects/inventory.jpg",
